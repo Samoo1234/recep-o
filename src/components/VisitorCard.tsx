@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, CheckCircle, XCircle } from 'lucide-react';
+import { User, Users, CheckCircle, XCircle } from 'lucide-react';
 import type { Visitante } from '../lib/supabase';
 
 interface VisitorCardProps {
@@ -25,6 +25,13 @@ export const VisitorCard: React.FC<VisitorCardProps> = ({ visitor, onMarkAsRead,
           <div className="visitor-info">
             <User size={20} />
             <span>Não evangélico</span>
+          </div>
+        )}
+        
+        {visitor.acompanhantes && (
+          <div className="visitor-info" style={{ marginTop: '0.5rem' }}>
+            <Users size={20} />
+            <span>Com: <strong>{visitor.acompanhantes}</strong></span>
           </div>
         )}
       </div>

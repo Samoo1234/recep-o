@@ -6,6 +6,7 @@ export const Recepcao: React.FC = () => {
   const [nome, setNome] = useState('');
   const [evangelico, setEvangelico] = useState<'sim' | 'nao'>('nao');
   const [denominacao, setDenominacao] = useState('');
+  const [acompanhantes, setAcompanhantes] = useState('');
   const [loading, setLoading] = useState(false);
   const [mensagem, setMensagem] = useState({ texto: '', erro: false });
 
@@ -27,6 +28,7 @@ export const Recepcao: React.FC = () => {
             nome: nome.trim(),
             evangelico: evangelico === 'sim',
             denominacao: evangelico === 'sim' ? denominacao.trim() : null,
+            acompanhantes: acompanhantes.trim() || null,
             status: 'novo'
           }
         ]);
@@ -37,6 +39,7 @@ export const Recepcao: React.FC = () => {
       setNome('');
       setEvangelico('nao');
       setDenominacao('');
+      setAcompanhantes('');
       
       // Limpa a mensagem após 3 segundos
       setTimeout(() => setMensagem({ texto: '', erro: false }), 3000);
@@ -64,6 +67,18 @@ export const Recepcao: React.FC = () => {
               onChange={(e) => setNome(e.target.value)}
               placeholder="Ex: João da Silva"
               required
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="form-label" htmlFor="acompanhantes">Acompanhantes (Opcional)</label>
+            <input
+              id="acompanhantes"
+              type="text"
+              className="form-input"
+              value={acompanhantes}
+              onChange={(e) => setAcompanhantes(e.target.value)}
+              placeholder="Ex: Esposa Maria e 2 filhos"
             />
           </div>
 

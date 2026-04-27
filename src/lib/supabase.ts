@@ -15,6 +15,7 @@ export type Visitante = {
   nome: string;
   evangelico: boolean;
   denominacao: string | null;
+  acompanhantes: string | null;
   status: 'novo' | 'lido';
   created_at: string;
 };
