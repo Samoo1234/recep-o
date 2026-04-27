@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { UserPlus } from 'lucide-react';
-import logoUrl from '../assets/arquivo.png';
+import logoUrl from '../assets/logo_Reviver.png';
 
 export const Recepcao: React.FC = () => {
   const [nome, setNome] = useState('');
