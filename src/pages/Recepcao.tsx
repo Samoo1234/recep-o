@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { UserPlus } from 'lucide-react';
+import logoUrl from '../assets/arquivo.png';
 
 export const Recepcao: React.FC = () => {
   const [nome, setNome] = useState('');
@@ -53,6 +54,17 @@ export const Recepcao: React.FC = () => {
 
   return (
     <div className="app-container">
+      <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+        <img 
+          src={logoUrl} 
+          alt="Logo da Igreja" 
+          style={{ maxHeight: '120px', maxWidth: '100%', objectFit: 'contain' }} 
+          onError={(e) => {
+            // Se a logo não existir, oculta a imagem para não ficar um quadrado quebrado
+            (e.target as HTMLImageElement).style.display = 'none';
+          }}
+        />
+      </div>
       <h1 className="text-center mb-8">Recepção de Visitantes</h1>
       
       <div className="form-container">
