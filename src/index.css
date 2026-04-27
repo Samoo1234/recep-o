@@ -132,7 +132,7 @@ body {
 
 .visitors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   gap: 1.5rem;
 }
 
@@ -197,4 +197,39 @@ body {
   padding: 4rem 2rem;
   color: var(--text-muted);
   font-size: 1.5rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+  }
+
+  .pulpit-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .visitor-card {
+    padding: 1.5rem;
+  }
+
+  .visitor-name {
+    font-size: 1.75rem;
+  }
+
+  .visitor-info {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+    margin: 0 0.5rem;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
