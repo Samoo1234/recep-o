@@ -29,8 +29,8 @@ export const VisitorCard: React.FC<VisitorCardProps> = ({ visitor, onMarkAsRead,
         )}
         
         {visitor.acompanhantes && (
-          <div className="visitor-info" style={{ marginTop: '0.5rem' }}>
-            <Users size={20} />
+          <div className="visitor-info" style={{ marginTop: '0.75rem', color: 'white', fontSize: '1.4rem' }}>
+            <Users size={24} />
             <span>Com: <strong>{visitor.acompanhantes}</strong></span>
           </div>
         )}
